@@ -15,3 +15,19 @@ class Publicacion(models.Model):
 
     def __str__(self):
         return self.titulo
+
+class MonsterHigh(models.Model):
+    Muñeca=models.CharField(max_length=300)
+    Nombre_modelo=models.CharField(max_length=200)
+    Descripcion=models.TextField()
+    Fecha_salida=models.DateTimeField(blank=True, null=True)
+    Precio_actual=models.CharField(max_length=150)
+    Fecha_publicacion= models.DateTimeField(default=timezone.now)
+
+    def publicar(self):
+        self.fecha_publicacion = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.Muñeca
+    

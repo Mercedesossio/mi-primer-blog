@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo Monster High</title>
+</head>
+<body>
+    <h1>Catálogo Monster High</h1>
+
+    {% if muñecas %}
+        {% for muñeca in muñecas %}
+            <div>
+                <h2>{{ muñeca.Nombre_modelo }}</h2>
+                <p>Muñeca: {{ muñeca.Muñeca }}</p>
+                <p>Descripción: {{ muñeca.Descripcion }}</p>
+                <p>Fecha de salida: {{ muñeca.Fecha_salida }}</p>
+                <p>Precio: {{ muñeca.Precio_actual }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No hay muñecas registradas.</p>
+    {% endif %}
+</body>
+</html>

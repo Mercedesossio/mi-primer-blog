@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.utils import timezone
 from .models import Publicacion
+from .models import MonsterHigh
 from django.contrib.auth.models import User
 # Create your views here.
 def lista_public(request):
@@ -20,3 +21,7 @@ def lista_public(request):
 	})
 
 # Create your views here.
+
+def mostrar_monster_high(request):
+    muñecas = MonsterHigh.objects.all()
+    return render(request, 'blog/MonsterHigh.html', {'muñecas': muñecas})
